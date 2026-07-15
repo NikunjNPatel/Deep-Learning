@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from SingleNeuronRegressor import SingleNeuronRegressor
+from SingleLayerPerceptrons import SingleLayerPerceptrons
 
 def main():
     # Generate synthetic data
@@ -16,7 +16,7 @@ def main():
     Y_train, Y_test = Y[:split_index], Y[split_index:]
 
     # Initialize and train the model
-    model = SingleNeuronRegressor(learning_rate=0.01, n_iterations=500)
+    model = SingleLayerPerceptrons(learning_rate=0.01, n_iterations=500)
     model.fit(X_train, Y_train)
 
     # Display model weights and bias

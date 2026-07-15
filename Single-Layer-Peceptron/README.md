@@ -1,6 +1,6 @@
-## Linear Regression with a Single Neuron
+## Linear Regression with a Single Layer Perceptron Model
 
-Linear regression is a fundamental supervised learning algorithm for predicting continuous values. In this implementation, the model is built as a single neuron with an identity activation function, learning a linear relationship between input features and the target variable.
+Linear regression is a fundamental supervised learning algorithm for predicting continuous values. In this implementation, the model is built as a single layer with an identity activation function, learning a linear relationship between input features and the target variable.
 
 ### 1. Model Architecture
 
@@ -68,41 +68,3 @@ The `SingleNeuronRegressor` class in `SingleNeuronRegressor.py` includes:
 - `compute_gradients`: compute weight and bias gradients
 - `fit`: train the model using batch gradient descent
 - `compute_metrics`: evaluate predictions with MSE, RMSE, MAE, and $R^2$
-
-### 6. Usage Example
-
-```python
-import numpy as np
-from SingleNeuronRegressor import SingleNeuronRegressor
-
-# Create synthetic training data
-np.random.seed(42)
-X = 2 * np.random.rand(100, 1)
-y = 4 + 3 * X + np.random.randn(100, 1)
-
-# Train the model
-model = SingleNeuronRegressor(learning_rate=0.05, n_iterations=1000)
-model.fit(X, y, verbose=False)
-
-# Make predictions
-predictions = model.predict(X)
-
-# Evaluate performance
-metrics = model.compute_metrics(y, predictions)
-print(metrics)
-```
-
-### 7. Notes
-
-- This model is suitable for regression tasks where the relationship between features and target is roughly linear.
-- Because the output neuron uses an identity activation, the model is essentially a linear function learned through gradient descent.
-- The current implementation expects input data `X` with shape `(N, d)` and target `y` with shape `(N, 1)`.
-
-### 8. Extensions
-
-Possible enhancements include:
-
-- scaling features before training
-- extending to multiple outputs or polynomial regression
-- adding support for regularization (L1/L2)
-- using mini-batch gradient descent

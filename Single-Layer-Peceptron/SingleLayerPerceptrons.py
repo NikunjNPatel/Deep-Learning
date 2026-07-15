@@ -1,8 +1,8 @@
 import numpy as np
 
-class SingleNeuronRegressor:
+class SingleLayerPerceptrons:
     """
-    A simple single neuron regression model with identity activation function.
+    A simple single layer perceptron model with identity activation function.
     """
     def __init__(self,learning_rate = 0.01, n_iterations = 1000, random_seed = 42):
         self.learning_rate = learning_rate
